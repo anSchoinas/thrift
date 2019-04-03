@@ -12,13 +12,6 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * The entry point for spring boot.
- *
- * @author Panos Konstantinidis
- * <p>
- * 2 July 2018
- */
 @Configuration
 @SpringBootApplication
 public class Application {
