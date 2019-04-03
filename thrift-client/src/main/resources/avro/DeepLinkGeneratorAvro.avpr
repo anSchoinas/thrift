@@ -1,0 +1,28 @@
+{
+  "protocol" : "GenerateDeepLinkAvro",
+  "namespace" : "gr.cosmote.generated.avro",
+  "types" : [ {
+	"namespace": "gr.cosmote.generated.avro",
+	"type": "record",
+	"name": "MyInternetAvroRequest",
+	"fields": [
+	  { "name": "channel", "type": "string"},
+	  { "name": "firebase",  "type": "boolean" },
+	  { "name": "asset",  "type": "string" },
+	  { "name": "url",     "type": "string" },
+	  { "name": "action", "type": "string" },
+	  { "name": "apn",  "type": ["string", "null"] },
+	  { "name": "isi",  "type": ["string", "null"] },
+	  { "name": "ibi",     "type": ["string", "null"] }
+	  ]
+  } ],
+  "messages" : {
+	"generateDeepLink" : {
+	  "request" : [ {
+		"name" : "input",
+		"type" : "MyInternetAvroRequest"
+	  } ],
+	  "response" : "string"
+	}
+  }
+}

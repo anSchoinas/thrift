@@ -1,0 +1,28 @@
+task compileThrift() {
+	doLast {
+		delete 'src/main/java/gr/aschoinas/generated'
+		println "Compiling thrift files"
+
+		String source = '"' + file('src/main/resources/thrift/Example.thrift').absolutePath + '"'
+		String target = '"' + file('src/main/tmp').absolutePath + '"'
+		println thrift + ' -r --gen java -out ' + target + ' ' + source
+
+		exec {
+			commandLine thrift, '-r','--gen','java','-out',target, source
+		}
+		println "Finished compiling thrift files"
+	}
+}
+
+// Really important!! During thrift build entire dest folder is truncated
+// if you build directly into src/main/java all source files will be deleted!!!!
+task moveThriftTmpFiles(type: Copy) {
+	dependsOn compileThrift
+	from "src/main/tmp"
+	into "src/main/java"
+}
+
+task generateThrift(type: Delete) {
+	dependsOn moveThriftTmpFiles
+	delete "src/main/tmp"
+}

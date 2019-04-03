@@ -1,0 +1,15 @@
+task compileThrift() {
+	doLast {
+		delete 'src/main/java/gr/aschoinas/generated'
+		println "Compiling thrift files"
+
+		String source = '"' + file('src/main/thrift/Example.thrift').absolutePath + '"'
+		String target = '"' + file('src/main/java/').absolutePath + '"'
+		println thrift + ' -r --gen java -out ' + target + ' ' + source
+
+		exec {
+			commandLine thrift, '-r','--gen','java','-out',target, source
+		}
+		println "Finished compiling thrift files"
+	}
+}
