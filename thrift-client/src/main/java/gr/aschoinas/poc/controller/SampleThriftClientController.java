@@ -17,6 +17,7 @@ public class SampleThriftClientController {
 	@Autowired
 	private SampleThriftClient client;
 
+
 	@RequestMapping("thrift/test")
 	public String testThrift(final SampleRequest request) {
 		try {
