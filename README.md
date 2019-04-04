@@ -8,3 +8,5 @@ http://localhost:6972/thrift/test?name=Andreas&lastname=Schoinas&middleName=Rock
 
 Response:
 Your name is: Andreas Rock Schoinas. Your age is: 24
+
+The projects are gradle based, so you need to have gradle downloaded (or use youre ide's built-in gradle distribution). You will also need to download thrift (https://thrift.apache.org/download) and change the gradle.properties files in all of the projects to point to your thrift executable path.
