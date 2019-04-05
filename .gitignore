@@ -2,3 +2,4 @@ build
 application.logs.path_IS_UNDEFINED
 out
 .gradle
+/rest-client/.idea

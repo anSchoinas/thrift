@@ -1,6 +1,6 @@
 package gr.aschoinas.poc;
 
-import org.apache.thrift.protocol.TBinaryProtocol;
+import org.apache.thrift.protocol.TCompactProtocol;
 import org.apache.thrift.protocol.TProtocolFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,6 +20,6 @@ public class Application {
 
 	@Bean
 	public TProtocolFactory tProtocolFactory() {
-		return new TBinaryProtocol.Factory();
+		return new TCompactProtocol.Factory();
 	}
 }
